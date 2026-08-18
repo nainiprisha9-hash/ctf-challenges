@@ -383,8 +383,29 @@ body {
 
 .challenge-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
+}
+
+.download-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 8px 14px;
+    background: var(--accent-dim);
+    border: 1px solid var(--border-hover);
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+}
+
+.download-link:hover {
+    background: rgba(99, 255, 182, 0.25);
+    transform: translateY(-1px);
 }
 
 /* ===== Challenge Card ===== */

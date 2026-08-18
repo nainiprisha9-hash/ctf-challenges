@@ -26,7 +26,7 @@
                 <span class="title-line title-accent">Hidden Flags</span>
             </h1>
             <p class="hero-subtitle">
-                Two challenges. Two flags. Can you uncover what's hidden in plain sight?
+                Three challenges. Three flags. Can you uncover what's hidden in plain sight?
             </p>
         </div>
     </section>
@@ -138,6 +138,49 @@
                         </button>
                     </div>
                     <div class="flag-result" id="result2"></div>
+                </div>
+            </div>
+
+            <!-- Challenge 3: Control and See -->
+            <div class="challenge-card" id="challenge3">
+                <div class="card-glow"></div>
+                <div class="card-header">
+                    <div class="card-badge">DOCS</div>
+                </div>
+                <div class="card-icon">📄</div>
+                <h3 class="card-title">Control and See</h3>
+                <p class="card-description">
+                    A classified document was redacted with a black box before sharing. 
+                    Can you see what lies underneath the redaction?
+                </p>
+                <div style="margin-bottom: 1.25rem;">
+                    <a href="control-and-see.pdf" download="control-and-see.pdf" target="_blank" class="download-link">
+                        📥 Download Challenge PDF
+                    </a>
+                </div>
+                <div class="card-hint">
+                    <span class="hint-icon">💡</span>
+                    <span>Hint: Ctrl+A, Ctrl+C 😉</span>
+                </div>
+                <div class="card-footer">
+                    <div class="card-points">
+                        <span class="points-value">50</span>
+                        <span class="points-label">pts</span>
+                    </div>
+                </div>
+
+                <!-- Submit form for Challenge 3 -->
+                <div class="submit-section">
+                    <div class="input-wrapper">
+                        <input type="text" id="flag3Input" class="flag-input" placeholder="FLAG{...}" autocomplete="off">
+                        <button class="submit-btn" onclick="checkFlag3()">
+                            <span>Submit</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flag-result" id="result3"></div>
                 </div>
             </div>
 

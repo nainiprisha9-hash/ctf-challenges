@@ -5,7 +5,7 @@ const commands = [
 
 const outputLines = [
     { text: 'Starting CTF Challenge Arena...', delay: 800 },
-    { text: 'Loading <span class="highlight">2 challenges</span>...', delay: 400 },
+    { text: 'Loading <span class="highlight">3 challenges</span>...', delay: 400 },
     { text: 'Difficulty: <span class="highlight">Easy</span>', delay: 300 },
     { text: 'Status: <span class="warn">⚠ Flags hidden</span>', delay: 300 },
     { text: '', delay: 200 },
@@ -100,6 +100,25 @@ function checkFlag2() {
     }
 }
 
+function checkFlag3() {
+    const input = document.getElementById('flag3Input');
+    const result = document.getElementById('result3');
+    const value = input.value.trim();
+
+    if (value.toLowerCase() === 'flag{ctrl_c_beats_black_boxes}') {
+        result.className = 'flag-result success';
+        result.textContent = '✅ Correct! Challenge 3 solved!';
+        launchConfetti();
+    } else if (value === '') {
+        result.className = 'flag-result error';
+        result.textContent = '⚠️ Please enter a flag';
+    } else {
+        result.className = 'flag-result error';
+        result.textContent = '❌ Incorrect flag. Try again!';
+        shakeInput(input);
+    }
+}
+
 // ===== Shake Animation =====
 function shakeInput(el) {
     el.style.animation = 'none';
@@ -146,11 +165,14 @@ function launchConfetti() {
 
 // ===== Allow Enter key to submit =====
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('flag1Input').addEventListener('keydown', (e) => {
+    document.getElementById('flag1Input')?.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') checkFlag1();
     });
-    document.getElementById('flag2Input').addEventListener('keydown', (e) => {
+    document.getElementById('flag2Input')?.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') checkFlag2();
+    });
+    document.getElementById('flag3Input')?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') checkFlag3();
     });
 });
 
