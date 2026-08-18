@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /secret-admin-panel/
+Disallow: /totally-not-a-flag/
+Disallow: /dev/null/
+
+# Note to self: Don't forget the flag!
+# FLAG{r0b0ts_c4nt_k33p_s3cr3ts}
+
+User-agent: CTFPlayer
+Allow: /flag
