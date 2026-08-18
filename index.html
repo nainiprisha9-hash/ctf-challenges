@@ -43,11 +43,13 @@
                         <span class="points-label">pts</span>
                     </div>
                 </div>
-                <h3 class="card-title">Robot's Secret</h3>
-                <p class="card-description">
-                    Every website has rules for robots. But what happens when those rules 
-                    hide more than they should? Some secrets are left in the most obvious places.
-                </p>
+                <div class="card-body">
+                    <h3 class="card-title">Robot's Secret</h3>
+                    <p class="card-description">
+                        Every website has rules for robots. But what happens when those rules 
+                        hide more than they should? Some secrets are left in the most obvious places.
+                    </p>
+                </div>
 
                 <details class="hint-accordion">
                     <summary class="hint-summary">
@@ -95,24 +97,26 @@
                         <span class="points-label">pts</span>
                     </div>
                 </div>
-                <h3 class="card-title">Hidden in Plain Sight</h3>
-                <p class="card-description">
-                    Not everything on a webpage is visible to the naked eye. 
-                    Sometimes developers leave secrets buried in the code itself. 
-                    Can you look beyond what is displayed?
-                </p>
+                <div class="card-body">
+                    <h3 class="card-title">Hidden in Plain Sight</h3>
+                    <p class="card-description">
+                        Not everything on a webpage is visible to the naked eye. 
+                        Sometimes developers leave secrets buried in the code itself. 
+                        Can you look beyond what is displayed?
+                    </p>
 
-                <!-- The hidden flag is here! Players need to inspect element to find it -->
-                <div class="secret-flag" style="display:none; visibility:hidden; opacity:0; height:0; overflow:hidden;" 
-                     data-flag="FLAG{1nsp3ct_3l3m3nt_m4st3r}" 
-                     aria-hidden="true"
-                     id="theSecretFlag">
-                    Congratulations! The flag is: FLAG{1nsp3ct_3l3m3nt_m4st3r}
-                </div>
+                    <!-- The hidden flag is here! Players need to inspect element to find it -->
+                    <div class="secret-flag" style="display:none; visibility:hidden; opacity:0; height:0; overflow:hidden;" 
+                         data-flag="FLAG{1nsp3ct_3l3m3nt_m4st3r}" 
+                         aria-hidden="true"
+                         id="theSecretFlag">
+                        Congratulations! The flag is: FLAG{1nsp3ct_3l3m3nt_m4st3r}
+                    </div>
 
-                <!-- Another hidden clue as a 0-size div -->
-                <div style="font-size:0; color:transparent; position:absolute; left:-9999px;">
-                    Almost there! Check the data-flag attribute on the element above with id="theSecretFlag"
+                    <!-- Another hidden clue as a 0-size div -->
+                    <div style="font-size:0; color:transparent; position:absolute; left:-9999px;">
+                        Almost there! Check the data-flag attribute on the element above with id="theSecretFlag"
+                    </div>
                 </div>
 
                 <details class="hint-accordion">
@@ -150,15 +154,17 @@
                         <span class="points-label">pts</span>
                     </div>
                 </div>
-                <h3 class="card-title">Control and See</h3>
-                <p class="card-description">
-                    A classified document was redacted with a black box before sharing. 
-                    Can you see what lies underneath the redaction?
-                </p>
-                <div class="doc-wrapper">
-                    <a href="control-and-see.pdf" download="control-and-see.pdf" target="_blank" class="download-link">
-                        Download Challenge PDF
-                    </a>
+                <div class="card-body">
+                    <h3 class="card-title">Control and See</h3>
+                    <p class="card-description">
+                        A classified document was redacted with a black box before sharing. 
+                        Can you see what lies underneath the redaction?
+                    </p>
+                    <div class="doc-wrapper">
+                        <a href="control-and-see.pdf" download="control-and-see.pdf" target="_blank" class="download-link">
+                            Download Challenge PDF
+                        </a>
+                    </div>
                 </div>
 
                 <details class="hint-accordion">

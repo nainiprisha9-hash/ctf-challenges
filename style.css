@@ -235,6 +235,13 @@ body {
     text-transform: uppercase;
 }
 
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+}
+
 .card-title {
     font-size: 1.25rem;
     font-weight: 700;
@@ -247,12 +254,13 @@ body {
     color: var(--text-secondary);
     font-size: 0.88rem;
     line-height: 1.6;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 /* PDF Download Link */
 .doc-wrapper {
-    margin-bottom: 1.25rem;
+    margin-top: auto;
+    margin-bottom: 0.25rem;
 }
 
 .download-link {
@@ -276,13 +284,14 @@ body {
     transform: translateY(-1px);
 }
 
-/* Sleek Collapsible Hint Accordion */
+/* Sleek Collapsible Hint Accordion - Aligned across all cards */
 .hint-accordion {
+    margin-top: auto;
+    margin-bottom: 1.25rem;
     background: var(--bg-input);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-sm);
     overflow: hidden;
-    margin-bottom: 1.5rem;
     transition: border-color 0.2s var(--ease-out);
 }
 
@@ -334,7 +343,7 @@ body {
 
 /* Terminal-Style Submission Row */
 .submit-section {
-    margin-top: auto;
+    margin-top: 0;
     width: 100%;
 }
 
