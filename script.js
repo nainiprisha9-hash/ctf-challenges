@@ -7,9 +7,9 @@ const outputLines = [
     { text: 'Starting CTF Challenge Arena...', delay: 800 },
     { text: 'Loading <span class="highlight">3 challenges</span>...', delay: 400 },
     { text: 'Difficulty: <span class="highlight">Easy</span>', delay: 300 },
-    { text: 'Status: <span class="warn">⚠ Flags hidden</span>', delay: 300 },
+    { text: 'Status: <span class="warn">Flags hidden</span>', delay: 300 },
     { text: '', delay: 200 },
-    { text: '<span class="highlight">Ready.</span> Start hunting! 🏁', delay: 500 },
+    { text: '<span class="highlight">Ready.</span> Start hunting!', delay: 500 },
 ];
 
 function typeWriter() {
@@ -69,14 +69,14 @@ function checkFlag1() {
 
     if (value === 'FLAG{r0b0ts_c4nt_k33p_s3cr3ts}') {
         result.className = 'flag-result success';
-        result.textContent = '✅ Correct! Challenge 1 solved!';
+        result.textContent = 'Correct! Challenge 1 solved!';
         launchConfetti();
     } else if (value === '') {
         result.className = 'flag-result error';
-        result.textContent = '⚠️ Please enter a flag';
+        result.textContent = 'Please enter a flag';
     } else {
         result.className = 'flag-result error';
-        result.textContent = '❌ Incorrect flag. Try again!';
+        result.textContent = 'Incorrect flag. Try again!';
         shakeInput(input);
     }
 }
@@ -88,14 +88,14 @@ function checkFlag2() {
 
     if (value === 'FLAG{1nsp3ct_3l3m3nt_m4st3r}') {
         result.className = 'flag-result success';
-        result.textContent = '✅ Correct! Challenge 2 solved!';
+        result.textContent = 'Correct! Challenge 2 solved!';
         launchConfetti();
     } else if (value === '') {
         result.className = 'flag-result error';
-        result.textContent = '⚠️ Please enter a flag';
+        result.textContent = 'Please enter a flag';
     } else {
         result.className = 'flag-result error';
-        result.textContent = '❌ Incorrect flag. Try again!';
+        result.textContent = 'Incorrect flag. Try again!';
         shakeInput(input);
     }
 }
@@ -107,14 +107,14 @@ function checkFlag3() {
 
     if (value.toLowerCase() === 'flag{ctrl_c_beats_black_boxes}') {
         result.className = 'flag-result success';
-        result.textContent = '✅ Correct! Challenge 3 solved!';
+        result.textContent = 'Correct! Challenge 3 solved!';
         launchConfetti();
     } else if (value === '') {
         result.className = 'flag-result error';
-        result.textContent = '⚠️ Please enter a flag';
+        result.textContent = 'Please enter a flag';
     } else {
         result.className = 'flag-result error';
-        result.textContent = '❌ Incorrect flag. Try again!';
+        result.textContent = 'Incorrect flag. Try again!';
         shakeInput(input);
     }
 }
