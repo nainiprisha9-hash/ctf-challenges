@@ -335,15 +335,19 @@ body {
 /* Terminal-Style Submission Row */
 .submit-section {
     margin-top: auto;
+    width: 100%;
 }
 
 .input-wrapper {
     display: flex;
     gap: 0.5rem;
+    width: 100%;
+    align-items: stretch;
 }
 
 .input-shell {
     flex: 1;
+    min-width: 0;
     display: flex;
     align-items: center;
     background: var(--bg-input);
@@ -365,10 +369,13 @@ body {
     color: var(--text-dim);
     margin-right: 0.4rem;
     user-select: none;
+    flex-shrink: 0;
 }
 
 .flag-input {
     flex: 1;
+    min-width: 0;
+    width: 100%;
     background: transparent;
     border: none;
     color: var(--text-primary);
@@ -384,13 +391,14 @@ body {
 
 /* Tactile Submit Button (Without Arrows) */
 .submit-btn {
+    flex-shrink: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-sans);
     font-size: 0.82rem;
     font-weight: 600;
-    padding: 0.65rem 1.15rem;
+    padding: 0.65rem 1.1rem;
     background: #ffffff;
     color: #090a0f;
     border: none;
