@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Can you find the hidden flags? Two CTF challenges await.">
+    <meta name="description" content="Entry-level web and forensics CTF challenges.">
     <title>CTF Challenge Arena</title>
     <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- Background particles -->
-    <div class="particles" id="particles"></div>
-
-    <!-- Scanline effect -->
-    <div class="scanline"></div>
-
-
 
     <!-- Hero Section -->
     <section class="hero single-col">
         <div class="hero-content">
+            <div class="hero-tag">TARGET ENVIRONMENT // v1.0.4</div>
             <h1 class="hero-title">
                 <span class="title-line">Find The</span>
                 <span class="title-line title-accent">Hidden Flags</span>
@@ -41,34 +36,44 @@
 
             <!-- Challenge 1: robots.txt -->
             <div class="challenge-card" id="challenge1">
-                <div class="card-glow"></div>
                 <div class="card-header">
-                    <div class="card-badge">WEB</div>
-                </div>
-                <h3 class="card-title">Robot's Secret</h3>
-                <p class="card-description">
-                    Every website has rules for robots. But what happens when those rules 
-                    hide more than they should? Some secrets are left in the most obvious places...
-                </p>
-                <div class="card-hint">
-                    <span>Hint: What file do web crawlers check first?</span>
-                </div>
-                <div class="card-footer">
+                    <div class="card-tags">
+                        <span class="card-badge">01 // RECON</span>
+                        <span class="badge-difficulty">EASY</span>
+                    </div>
                     <div class="card-points">
                         <span class="points-value">50</span>
                         <span class="points-label">pts</span>
                     </div>
                 </div>
+                <h3 class="card-title">Robot's Secret</h3>
+                <p class="card-description">
+                    Every website has rules for robots. But what happens when those rules 
+                    hide more than they should? Some secrets are left in the most obvious places.
+                </p>
+
+                <details class="hint-accordion">
+                    <summary class="hint-summary">
+                        <span>Need a hint?</span>
+                        <span class="hint-arrow">&darr;</span>
+                    </summary>
+                    <div class="hint-drawer">
+                        What file in the web root tells search engines and crawlers which paths not to index?
+                    </div>
+                </details>
 
                 <!-- Submit form for Challenge 1 -->
                 <div class="submit-section">
                     <div class="input-wrapper">
-                        <input type="text" id="flag1Input" class="flag-input" placeholder="FLAG{...}" autocomplete="off">
+                        <div class="input-shell">
+                            <span class="input-prefix">&gt;</span>
+                            <input type="text" id="flag1Input" class="flag-input" placeholder="FLAG{...}" spellcheck="false" autocomplete="off">
+                        </div>
                         <button class="submit-btn" onclick="checkFlag1()">
                             <span>Submit</span>
                         </button>
                     </div>
-                    <div class="flag-result" id="result1"></div>
+                    <div class="flag-result" id="result1" role="alert" aria-live="polite"></div>
                 </div>
             </div>
 
@@ -85,19 +90,22 @@
                 Look deeper. Check the hidden elements below
             -->
             <div class="challenge-card" id="challenge2">
-                <div class="card-glow"></div>
                 <div class="card-header">
-                    <div class="card-badge">WEB</div>
+                    <div class="card-tags">
+                        <span class="card-badge">02 // INSPECT</span>
+                        <span class="badge-difficulty">EASY</span>
+                    </div>
+                    <div class="card-points">
+                        <span class="points-value">50</span>
+                        <span class="points-label">pts</span>
+                    </div>
                 </div>
                 <h3 class="card-title">Hidden in Plain Sight</h3>
                 <p class="card-description">
                     Not everything on a webpage is visible to the naked eye. 
                     Sometimes developers leave secrets buried in the code itself. 
-                    Can you look beyond what's displayed?
+                    Can you look beyond what is displayed?
                 </p>
-                <div class="card-hint">
-                    <span>Hint: Right-click -> You know what to do</span>
-                </div>
 
                 <!-- The hidden flag is here! Players need to inspect element to find it -->
                 <div class="secret-flag" style="display:none; visibility:hidden; opacity:0; height:0; overflow:hidden;" 
@@ -112,60 +120,76 @@
                     Almost there! Check the data-flag attribute on the element above with id="theSecretFlag"
                 </div>
 
-                <div class="card-footer">
-                    <div class="card-points">
-                        <span class="points-value">50</span>
-                        <span class="points-label">pts</span>
+                <details class="hint-accordion">
+                    <summary class="hint-summary">
+                        <span>Need a hint?</span>
+                        <span class="hint-arrow">&darr;</span>
+                    </summary>
+                    <div class="hint-drawer">
+                        Right-click anywhere on this card and select "Inspect Element" (or press F12) to explore the DOM tree.
                     </div>
-                </div>
+                </details>
 
                 <!-- Submit form for Challenge 2 -->
                 <div class="submit-section">
                     <div class="input-wrapper">
-                        <input type="text" id="flag2Input" class="flag-input" placeholder="FLAG{...}" autocomplete="off">
+                        <div class="input-shell">
+                            <span class="input-prefix">&gt;</span>
+                            <input type="text" id="flag2Input" class="flag-input" placeholder="FLAG{...}" spellcheck="false" autocomplete="off">
+                        </div>
                         <button class="submit-btn" onclick="checkFlag2()">
                             <span>Submit</span>
                         </button>
                     </div>
-                    <div class="flag-result" id="result2"></div>
+                    <div class="flag-result" id="result2" role="alert" aria-live="polite"></div>
                 </div>
             </div>
 
             <!-- Challenge 3: Control and See -->
             <div class="challenge-card" id="challenge3">
-                <div class="card-glow"></div>
                 <div class="card-header">
-                    <div class="card-badge">FORENSICS</div>
+                    <div class="card-tags">
+                        <span class="card-badge">03 // FORENSICS</span>
+                        <span class="badge-difficulty">EASY</span>
+                    </div>
+                    <div class="card-points">
+                        <span class="points-value">50</span>
+                        <span class="points-label">pts</span>
+                    </div>
                 </div>
                 <h3 class="card-title">Control and See</h3>
                 <p class="card-description">
                     A classified document was redacted with a black box before sharing. 
                     Can you see what lies underneath the redaction?
                 </p>
-                <div style="margin-bottom: 1.25rem;">
+                <div class="doc-wrapper">
                     <a href="control-and-see.pdf" download="control-and-see.pdf" target="_blank" class="download-link">
                         Download Challenge PDF
                     </a>
                 </div>
-                <div class="card-hint">
-                    <span>Hint: Ctrl+A, Ctrl+C</span>
-                </div>
-                <div class="card-footer">
-                    <div class="card-points">
-                        <span class="points-value">50</span>
-                        <span class="points-label">pts</span>
+
+                <details class="hint-accordion">
+                    <summary class="hint-summary">
+                        <span>Need a hint?</span>
+                        <span class="hint-arrow">&darr;</span>
+                    </summary>
+                    <div class="hint-drawer">
+                        Ctrl+A, Ctrl+C to copy all text in the document.
                     </div>
-                </div>
+                </details>
 
                 <!-- Submit form for Challenge 3 -->
                 <div class="submit-section">
                     <div class="input-wrapper">
-                        <input type="text" id="flag3Input" class="flag-input" placeholder="FLAG{...}" autocomplete="off">
+                        <div class="input-shell">
+                            <span class="input-prefix">&gt;</span>
+                            <input type="text" id="flag3Input" class="flag-input" placeholder="FLAG{...}" spellcheck="false" autocomplete="off">
+                        </div>
                         <button class="submit-btn" onclick="checkFlag3()">
                             <span>Submit</span>
                         </button>
                     </div>
-                    <div class="flag-result" id="result3"></div>
+                    <div class="flag-result" id="result3" role="alert" aria-live="polite"></div>
                 </div>
             </div>
 
