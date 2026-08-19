@@ -61,6 +61,42 @@ function createParticles() {
     }
 }
 
+// ===== Solved State Tracking =====
+const solvedState = {
+    challenge1: false,
+    challenge2: false,
+    challenge3: false,
+};
+
+function markSolved(challengeKey, cardId) {
+    solvedState[challengeKey] = true;
+    const card = document.getElementById(cardId);
+    if (card) {
+        card.classList.add('is-solved');
+        const tags = card.querySelector('.card-tags');
+        if (tags && !tags.querySelector('.badge-solved')) {
+            const badge = document.createElement('span');
+            badge.className = 'badge-solved';
+            badge.textContent = 'SOLVED';
+            tags.appendChild(badge);
+        }
+    }
+    checkAllSolved();
+}
+
+function checkAllSolved() {
+    if (solvedState.challenge1 && solvedState.challenge2 && solvedState.challenge3) {
+        const banner = document.getElementById('completionBanner');
+        if (banner) {
+            banner.style.display = 'block';
+            banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        // Grand celebration confetti
+        launchConfetti();
+        setTimeout(launchConfetti, 1000);
+    }
+}
+
 // ===== Flag Checking =====
 function checkFlag1() {
     const input = document.getElementById('flag1Input');
@@ -70,6 +106,7 @@ function checkFlag1() {
     if (value === 'FLAG{r0b0ts_c4nt_k33p_s3cr3ts}') {
         result.className = 'flag-result success';
         result.textContent = 'Correct! Challenge 1 solved!';
+        markSolved('challenge1', 'challenge1');
         launchConfetti();
     } else if (value === '') {
         result.className = 'flag-result error';
@@ -89,6 +126,7 @@ function checkFlag2() {
     if (value === 'FLAG{1nsp3ct_3l3m3nt_m4st3r}') {
         result.className = 'flag-result success';
         result.textContent = 'Correct! Challenge 2 solved!';
+        markSolved('challenge2', 'challenge2');
         launchConfetti();
     } else if (value === '') {
         result.className = 'flag-result error';
@@ -108,6 +146,7 @@ function checkFlag3() {
     if (value.toLowerCase() === 'flag{ctrl_c_beats_black_boxes}') {
         result.className = 'flag-result success';
         result.textContent = 'Correct! Challenge 3 solved!';
+        markSolved('challenge3', 'challenge3');
         launchConfetti();
     } else if (value === '') {
         result.className = 'flag-result error';
